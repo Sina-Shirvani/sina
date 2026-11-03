@@ -8,6 +8,7 @@ const types = {
   jpg: 'image/jpeg',
   ico: 'image/x-icon',
   pdf: 'application/pdf',
+  xml: 'application/xml; charset=utf-8',
 };
 
 createServer(async (req, res) => {
