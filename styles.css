@@ -1138,3 +1138,19 @@ footer { border-top: 1px solid #1d332d; }
 .case-study figure { margin: 16px 0; }
 .case-study img { display: block; max-width: 100%; height: auto; }
 .case-study pre { overflow-x: auto; padding: 12px; background: var(--background); }
+
+.packet-tracer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.packet-tracer-card {
+  padding: 18px;
+  border: 1px solid var(--border);
+  background: var(--card);
+}
+
+.packet-tracer-card h4 { margin: 0 0 8px; }
+.packet-tracer-card p { margin: 0 0 8px; color: var(--muted-foreground); }
