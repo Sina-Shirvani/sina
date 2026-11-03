@@ -979,7 +979,7 @@ footer { border-top: 1px solid #1d332d; }
   padding-inline: 8px;
   border: 1px solid rgba(126, 242, 197, 0.19);
   color: #bdebd8;
-  font: 600 0.66rem/1 var(--font-mono);
+  font: 700 0.875rem/1.2 var(--font-mono);
   text-transform: uppercase;
   cursor: pointer;
   list-style: none;
