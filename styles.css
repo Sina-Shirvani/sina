@@ -1084,6 +1084,30 @@ footer { border-top: 1px solid #1d332d; }
   .project-outcome { grid-column: 1; }
 }
 
+.contact-copy .relocation-note {
+  margin-top: 16px;
+  padding: 10px 12px;
+  border-inline-start: 3px solid var(--primary);
+  background: rgba(126, 242, 197, 0.08);
+  color: var(--foreground);
+}
+
+.relocation-note strong { color: var(--primary); }
+
+.floating-top {
+  position: fixed;
+  z-index: 30;
+  inset: auto max(16px, env(safe-area-inset-right)) max(16px, env(safe-area-inset-bottom)) auto;
+  background: var(--primary);
+  color: var(--primary-foreground);
+}
+
+.floating-top[hidden] { display: none; }
+
+@media (max-width: 760px) {
+  footer { padding-bottom: 64px; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after {
