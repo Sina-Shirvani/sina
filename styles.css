@@ -1116,3 +1116,25 @@ footer { border-top: 1px solid #1d332d; }
     transition-duration: 0.01ms !important;
   }
 }
+
+.case-study {
+  grid-column: 1 / -1;
+  min-width: 0;
+  border-top: 1px solid var(--border);
+  padding-top: 10px;
+}
+
+.case-study summary {
+  display: list-item;
+  min-block-size: 44px;
+  padding-block: 10px;
+  color: var(--primary);
+  cursor: pointer;
+}
+
+.case-study h4 { margin: 20px 0 6px; }
+.case-study p, .case-study figcaption { color: var(--muted-foreground); line-height: 1.6; }
+.case-study a { color: var(--primary); text-decoration: underline; }
+.case-study figure { margin: 16px 0; }
+.case-study img { display: block; max-width: 100%; height: auto; }
+.case-study pre { overflow-x: auto; padding: 12px; background: var(--background); }
