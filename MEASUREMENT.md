@@ -2,7 +2,7 @@
 
 ## Current state
 
-The GitHub Pages project serves the portfolio under /sina/. The home page declares that URL as canonical and uses fragments for sections. The browser found one inline script for UI behavior, no third-party analytics script, no verification tag, and no robots meta directive. The host-level robots.txt and existing project sitemap returned 404 before this change. The page has two résumé links, two email links, one LinkedIn link, 22 GitHub links of several types, and two Projects fragment links. The existing Playwright and axe workflow remains in place.
+The GitHub Pages user site serves the portfolio at the domain root. The home page declares that URL as canonical and uses fragments for sections. The browser found one inline script for UI behavior, no third-party analytics script, no verification tag, and no robots meta directive. The host-level robots.txt and existing project sitemap returned 404 before this change. The page has two résumé links, two email links, one LinkedIn link, 22 GitHub links of several types, and two Projects fragment links. The existing Playwright and axe workflow remains in place.
 
 The proposed sitemap contains one canonical HTML page. It omits fragments, assets and the résumé, which remains publicly downloadable. A project-level robots.txt would not control the shared hostname. A sitemap is a discovery hint and does not guarantee indexing.
 
@@ -20,10 +20,10 @@ References: [GA4 enhanced measurement](https://support.google.com/analytics/answ
 
 ## Search Console handoff
 
-1. Sign into [Search Console](https://search.google.com/search-console/) and add the **URL prefix** property for `https://sina-shirvani.github.io/sina/`, including the trailing slash.
+1. Sign into [Search Console](https://search.google.com/search-console/) and add the **URL prefix** property for `https://sina-shirvani.github.io/`, including the trailing slash.
 2. Select **HTML tag** and supply only the public verification meta tag. Do not share account credentials. The tag can be added to the homepage head after it is supplied, then published with approval.
 3. Once the live source contains the tag, click **Verify** in Search Console. Keep the tag installed.
-4. Inspect the canonical homepage with **URL Inspection**. Review the indexing status and Google-selected canonical where available. Submit `https://sina-shirvani.github.io/sina/sitemap.xml` under **Sitemaps** after deployment.
+4. Inspect the canonical homepage with **URL Inspection**. Review the indexing status and Google-selected canonical where available. Submit `https://sina-shirvani.github.io/sitemap.xml` under **Sitemaps** after deployment.
 5. Under **Performance → Search results**, compare the last 28 days with the previous 28. Use Queries and Pages to inspect impressions, clicks, CTR and average position. Position is an aggregate, and some queries are omitted for privacy.
 
 [Ownership verification](https://support.google.com/webmasters/answer/9008080) · [URL-prefix properties](https://support.google.com/webmasters/answer/10432366)

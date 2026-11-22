@@ -12,7 +12,7 @@ test('portfolio loads, lays out, and serves its local assets', async ({ page, re
     if (res.status() >= 400) errors.push(`${res.status()} ${res.url()}`);
   });
 
-  const response = await page.goto('/sina/');
+  const response = await page.goto('/');
   expect(response.status()).toBe(200);
   await expect(page).toHaveTitle(/Network & Systems Engineer/);
   await expect(page.getByRole('heading', { level: 1 })).toHaveText(/Ahmad.*Shirvani/);
@@ -31,7 +31,7 @@ test('portfolio loads, lays out, and serves its local assets', async ({ page, re
 
   for (const [asset, mime] of [['favicon.ico', 'image/x-icon'], ['social-preview.jpg', 'image/jpeg'],
     ['Ahmad-Shirvani-Master-Resume.pdf', 'application/pdf']]) {
-    const result = await request.get(`/sina/${asset}`);
+    const result = await request.get(`/${asset}`);
     expect(result.ok(), asset).toBeTruthy();
     expect(result.headers()['content-type']).toContain(mime);
     if (mime === 'application/pdf') expect((await result.body()).subarray(0, 5).toString()).toBe('%PDF-');
@@ -40,7 +40,7 @@ test('portfolio loads, lays out, and serves its local assets', async ({ page, re
 });
 
 test('keyboard menu and navigation keep destinations visible', async ({ page }) => {
-  await page.goto('/sina/');
+  await page.goto('/');
   await page.keyboard.press('Tab');
   await expect(page.getByRole('link', { name: 'Skip to content' })).toBeFocused();
   await page.keyboard.press('Enter');
@@ -75,7 +75,7 @@ test('keyboard menu and navigation keep destinations visible', async ({ page }) 
 });
 
 test('recruiter actions and project destinations are available', async ({ page }) => {
-  await page.goto('/sina/');
+  await page.goto('/');
   await page.getByRole('link', { name: 'View Projects', exact: true }).click();
   await expect(page).toHaveURL(/#labs$/);
   await expect(page.getByRole('link', { name: 'Email me' })).toHaveAttribute('href', /^mailto:.+@.+/);
@@ -102,7 +102,7 @@ test('recruiter actions and project destinations are available', async ({ page }
 });
 
 test('reports automated accessibility violations', async ({ page }, testInfo) => {
-  await page.goto('/sina/');
+  await page.goto('/');
   for (const toggle of await page.locator('.case-study summary').all()) await toggle.click();
   const { violations } = await new AxeBuilder({ page })
     .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa']).analyze();

@@ -4,7 +4,7 @@ Static GitHub Pages edition of Ahmad Shirvani's networking and systems engineeri
 
 ## Live site
 
-https://sina-shirvani.github.io/sina/
+https://sina-shirvani.github.io/
 
 ## Content
 
@@ -27,7 +27,7 @@ npm test
 npm run test:report
 ```
 
-On Linux, use `npx playwright install --with-deps chromium` to install browser system dependencies. The test runner starts a loopback-only server on port 4173 and serves the site under `/sina/`, matching the GitHub Pages URL structure. Stop any other process using that port before rerunning. If Playwright reports a missing executable after a dependency update, rerun the browser installation command.
+On Linux, use `npx playwright install --with-deps chromium` to install browser system dependencies. The test runner starts a loopback-only server on port 4173 and serves the site under `/`, matching the GitHub Pages URL structure. Stop any other process using that port before rerunning. If Playwright reports a missing executable after a dependency update, rerun the browser installation command.
 
 Use `npm test -- --project=390x844` to rerun one viewport. External destinations are checked as link contracts, so CI does not depend on LinkedIn, GitHub, or a local mail client. The résumé test checks the served PDF signature and both browser downloads.
 

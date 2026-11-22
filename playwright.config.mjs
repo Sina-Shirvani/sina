@@ -21,7 +21,7 @@ export default defineConfig({
   })),
   webServer: {
     command: 'node tests/serve.mjs',
-    url: 'http://127.0.0.1:4173/sina/',
+    url: 'http://127.0.0.1:4173/',
     timeout: 15_000,
   },
 });

@@ -13,9 +13,9 @@ const types = {
 
 createServer(async (req, res) => {
   const pathname = new URL(req.url, 'http://localhost').pathname;
-  const file = pathname === '/sina/' ? 'index.html' : pathname.slice('/sina/'.length);
+  const file = pathname === '/' ? 'index.html' : pathname.slice('/'.length);
   const type = types[file.split('.').at(-1)];
-  if (!pathname.startsWith('/sina/') || !/^[\w/-]+\.[a-z]+$/.test(file) || !type) {
+  if (!pathname.startsWith('/') || !/^[\w/-]+\.[a-z]+$/.test(file) || !type) {
     res.writeHead(404).end();
     return;
   }
